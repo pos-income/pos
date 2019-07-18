@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="commoneysystem" />
+        <module name="pos123" />
         <module name="moneysystem" />
       </profile>
     </annotationProcessing>
