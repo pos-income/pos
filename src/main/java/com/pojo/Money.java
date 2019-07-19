@@ -16,7 +16,7 @@ public class Money extends Users{
     //资金的id
     private Integer id;
     //入职时间
-    private Integer Time;
+    private String Time;
     //收入（找零前）
     private Double Income;
     //找零
