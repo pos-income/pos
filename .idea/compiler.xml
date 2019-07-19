@@ -9,7 +9,11 @@
         <module name="commoneysystem" />
         <module name="pos123" />
         <module name="moneysystem" />
+        <module name="pos" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pos" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
