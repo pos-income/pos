@@ -12,6 +12,11 @@ public class ProductsDaoImpl implements ProductsDao {
     }
 
     @Override
+    public Integer update(Products products) {
+        return null;
+    }
+
+    @Override
     public Products findProducts(Products products) {
         return null;
     }

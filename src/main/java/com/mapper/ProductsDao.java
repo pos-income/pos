@@ -10,6 +10,8 @@ import java.util.List;
 public interface ProductsDao {
     //增加商品的方法接口  返回受影响行数
     Integer addProducts(Products products);
+    //
+    Integer update(Products products);
     //查找单个商品的方法接口  返回查到了商品信息
     Products findProducts(Products products);
     //查找多个商品的方法接口  返回一个集合数组
