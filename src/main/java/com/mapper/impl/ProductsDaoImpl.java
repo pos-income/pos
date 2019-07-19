@@ -1,14 +1,21 @@
 package com.mapper.impl;
 
+import com.config.JdbcTemplate;
 import com.mapper.ProductsDao;
 import com.pojo.Products;
 
 import java.util.List;
 
 public class ProductsDaoImpl implements ProductsDao {
+    /**
+     *
+     */
+    JdbcTemplate<Products> jdbcTemplate =new JdbcTemplate<>();
+
     @Override
     public Integer addProducts(Products products) {
-        return null;
+        Integer update = JdbcTemplate.update("insert into products () value()");
+        return update;
     }
 
     @Override

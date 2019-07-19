@@ -19,4 +19,36 @@ public class Logger extends Users{
     private  String Time;
     //用户行为
     private String Play;
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public void setUid(Integer uid) {
+        Uid = uid;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
+
+    public void setPlay(String play) {
+        Play = play;
+    }
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public Integer getUid() {
+        return Uid;
+    }
+
+    public String getTime() {
+        return Time;
+    }
+
+    public String getPlay() {
+        return Play;
+    }
 }

@@ -42,7 +42,7 @@ public class JdbcTemplate <T>{
     }
 
 
-    public static List<Object> query(String sql,Object o,Object...args) {
+    public  List<T> query(String sql,Object o,Object...args) {
         Connection conn = null;
         PreparedStatement st = null;
         ResultSet rs = null;
@@ -66,8 +66,8 @@ public class JdbcTemplate <T>{
         }
         return null;
     }
-    public static List<Object> resultDemo(ResultSet rs,Object o) throws Exception {
-        ArrayList<Object> list = new ArrayList<Object>();
+    public  List<T> resultDemo(ResultSet rs,Object o) throws Exception {
+        ArrayList<T> list = new ArrayList<T>();
         while(rs.next()) {
             //可以获取指定表中每一列的列名
             ResultSetMetaData metaData = rs.getMetaData();
@@ -87,7 +87,7 @@ public class JdbcTemplate <T>{
                     f.set(newInstance, rs.getObject(i));
                 }
             }
-            list.add(newInstance);
+            list.add((T) newInstance);
         }
         return list;
     }

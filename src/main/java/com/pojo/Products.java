@@ -19,4 +19,36 @@ public class Products {
     private Integer Counts;
     //商品价格
     private Double Prices;
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public String getProductName() {
+        return ProductName;
+    }
+
+    public Integer getCounts() {
+        return Counts;
+    }
+
+    public Double getPrices() {
+        return Prices;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public void setProductName(String productName) {
+        ProductName = productName;
+    }
+
+    public void setCounts(Integer counts) {
+        Counts = counts;
+    }
+
+    public void setPrices(Double prices) {
+        Prices = prices;
+    }
 }

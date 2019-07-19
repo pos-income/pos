@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserDao {
    //增加方法接口  返回受影响行数
    Integer addUser(Users users);
-   //修改方法接口   返回受影响行数
+   //修改方法接口   返回受影响行数  通过Email
    Integer update(Users users);
    //查找单个用户方法接口  返回查到的用户信息
    Users findUser(Users users);
