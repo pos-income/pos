@@ -20,9 +20,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Integer addUser(Users users) {
         //添加功能测试通过
-        Integer i = JdbcTemplate.update("insert into users (Jid,UserName,Password,Time) values(?,?,?,?)",
+        Integer addUserMethed = JdbcTemplate.update("insert into users (Jid,UserName,Password,Time) values(?,?,?,?)",
                 users.getJid(),users.getUserName(),users.getPassword(),users.getTime());
-        return i;
+        return addUserMethed;
     }
 
     /**
@@ -32,9 +32,9 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public Integer update(Users users) {
-        Integer i = JdbcTemplate.update("update users set Password=? where Email=?",
+        Integer updateUserMethed = JdbcTemplate.update("update users set Password=? where Email=?",
                 users.getPassword(),users.getEmail());
-        return i;
+        return updateUserMethed;
     }
 
     /**
@@ -44,9 +44,9 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public Users findUser(Users users) {
-        List<Users> query = jdbcTemplate.query("select * from users where UserName=?",
-                users.getUserName());
-        Users user = (Users) query.get(0);
+        List<Users> findUserMethed = jdbcTemplate.query("select * from users where UserName=?",
+                users,users.getUserName());
+        Users user = (Users) findUserMethed.get(0);
         return user;
     }
 
@@ -57,8 +57,8 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public List<Users> findUserAll(Users users) {
-        List<Users> userAll = jdbcTemplate.query("select * from users",
-                users);
-        return userAll;
+        List<Users> findUserAllMethed = jdbcTemplate.query("select * from users",
+                null);
+        return findUserAllMethed;
     }
 }

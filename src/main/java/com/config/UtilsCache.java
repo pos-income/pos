@@ -5,7 +5,6 @@ import com.mapper.impl.*;
 import com.pojo.*;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 存储常用的查询结果的工具类

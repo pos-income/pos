@@ -14,6 +14,8 @@
           <element id="module-output" name="pos" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.16" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
           <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />

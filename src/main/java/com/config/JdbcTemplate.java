@@ -55,8 +55,7 @@ public class JdbcTemplate <T>{
                 st.setObject(i+1, args[i]);
             }
             rs = st.executeQuery();
-            ArrayList<Object> list = new ArrayList<Object>();
-            System.out.println(resultDemo(rs, o));
+            ArrayList<T> list = new ArrayList<>();
             return resultDemo(rs, o);
 
         }catch(Exception e) {

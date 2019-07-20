@@ -14,9 +14,21 @@ public class JobDaoImpl implements JobDao {
      */
     @Override
     public Integer addJob(Job job) {
-        Integer update = JdbcTemplate.update("insert into job (Jname) value(?)",
+        Integer addJobMethed = JdbcTemplate.update("insert into job (Jname) value(?)",
                 job.getJname());
-        return update;
+        return addJobMethed;
+    }
+
+    /**
+     *通过Jname删除职位
+     * @param job
+     * @return
+     */
+    @Override
+    public Integer delete(Job job) {
+        Integer deleteJobMethed = JdbcTemplate.update("delete from job where Jname=?",
+                job.getJname());
+        return deleteJobMethed;
     }
 
    /* @Override

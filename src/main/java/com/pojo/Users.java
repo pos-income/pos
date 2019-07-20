@@ -11,7 +11,7 @@ import lombok.*;
  */
 public class Users extends  Job{
 //    员工账号，可以用作员工登录系统的账号
-    private Integer id;
+    private Integer Id;
 //    员工的职位id，可根据该id知道该员工的职位
     private  Integer Jid;
 //    员工的姓名

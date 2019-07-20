@@ -41,7 +41,7 @@ public class MoneyDaoImpl implements MoneyDao {
     @Override
     public List<Money> findMoneyAll(Money money) {
         List<Money> queryAll = jdbcTemplate.query("select * from money order by Time limit 0,5",
-                money.getTime());
+                null);
         return queryAll;
     }
 }

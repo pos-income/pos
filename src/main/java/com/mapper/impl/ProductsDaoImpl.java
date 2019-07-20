@@ -68,8 +68,8 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public List<Products> findProductsAll(Products products) {
-        List<Products> queryAll = jdbcTemplate.query("select * from products order by Counts desc limt 0,5",
-                products.getCounts());
+        List<Products> queryAll = jdbcTemplate.query("select * from products ",
+                null);
         return queryAll;
     }
 }

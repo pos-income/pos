@@ -34,7 +34,7 @@ public class BillDaoImpl implements BillDao {
     @Override
     public List<Bill> findBillAll(Bill bill) {
         List<Bill> queryAll = jdbcTemplate.query("select b.Bid,p.ProductName,p.Counts,p.prices,p.Counts*p.prices as SUM_prices from bill as b,products as p where b.Bid=? and b.Pid=p.id limit 0,5",
-                bill.getBid());
+                null);
         return queryAll;
     }
 }
