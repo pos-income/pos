@@ -1,3 +1,5 @@
+package com.config;
+
 import com.sun.mail.util.MailSSLSocketFactory;
 
 import javax.mail.*;

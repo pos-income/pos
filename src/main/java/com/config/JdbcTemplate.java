@@ -13,7 +13,7 @@ import java.util.List;
  *
  */
 public class JdbcTemplate <T>{
-    private JdbcTemplate() {}
+    public JdbcTemplate() {}
 
     /**
      *

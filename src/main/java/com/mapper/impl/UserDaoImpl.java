@@ -13,7 +13,7 @@ public class UserDaoImpl implements UserDao {
     JdbcTemplate<Users> jdbcTemplate =new JdbcTemplate<>();
 
     /**
-     *
+     *添加用户信息
      * @param users
      * @return
      */
@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     /**
-     *
+     *通过Email修改密码
      * @param users
      * @return
      */
@@ -38,25 +38,27 @@ public class UserDaoImpl implements UserDao {
     }
 
     /**
-     *
+     *通过UserName查询
      * @param users
      * @return
      */
     @Override
     public Users findUser(Users users) {
-        List<Users> query = jdbcTemplate.query("select * from users where id=?", users.getId());
+        List<Users> query = jdbcTemplate.query("select * from users where UserName=?",
+                users.getUserName());
         Users user = (Users) query.get(0);
         return user;
     }
 
     /**
-     *
+     *查询所有用户信息
      * @param users
      * @return
      */
     @Override
     public List<Users> findUserAll(Users users) {
-        List<Users> userAll = jdbcTemplate.query("select * from users", users);
+        List<Users> userAll = jdbcTemplate.query("select * from users",
+                users);
         return userAll;
     }
 }
