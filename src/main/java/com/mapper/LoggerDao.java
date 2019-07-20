@@ -11,7 +11,7 @@ public interface LoggerDao {
 
     Integer addLogger(Logger logger);
 
-    Logger findLogger(Logger logger);
+   /* Logger findLogger(Logger logger);*/
 
     List<Logger> findLoggerAll(Logger logger);
 }

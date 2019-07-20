@@ -11,7 +11,7 @@ public interface BillDao {
 
     Integer addBill(Bill bill);
 
-    Bill findBill(Bill bill);
+    /*Bill findBill(Bill bill);*/
 
     List<Bill> findBillAll(Bill bill);
 }

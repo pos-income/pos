@@ -11,7 +11,7 @@ public interface JobDao {
 
     Integer addJob(Job job);
 
-    Job findJob(Job job);
+    /*Job findJob(Job job);
 
-    List<Job> findJobAll(Job job);
+    List<Job> findJobAll(Job job);*/
 }

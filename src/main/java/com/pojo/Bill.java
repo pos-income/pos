@@ -2,9 +2,7 @@ package com.pojo;
 
 import lombok.*;
 
-@Data
-@Setter
-@Getter
+
 @NoArgsConstructor
 @AllArgsConstructor
 /**
