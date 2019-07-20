@@ -48,7 +48,7 @@ public class UtilsCache {
     public static List<Users> getUserUtils() {
         if (userUtils == null){
             UserDaoImpl userDao = new UserDaoImpl();
-            userUtils = userDao.findUserAll(null)
+            userUtils = userDao.findUserAll(null);
         }
         return userUtils;
     }
