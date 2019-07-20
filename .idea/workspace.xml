@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07a79fd9-2d8c-46d7-86e8-daaee0df1b44" name="Default Changelist" comment="2019.7-19  新增Dao层Products的修改方法和实现方法">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test001.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test001.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/config/JdbcTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/config/JdbcTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/JobDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/JobDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/LoggerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/LoggerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/MoneyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/MoneyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/ProductsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/ProductsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/impl/ProductsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/impl/ProductsDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mapper/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Users.java" afterDir="false" />
+    <list default="true" id="07a79fd9-2d8c-46d7-86e8-daaee0df1b44" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Bill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="384">
+              <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding>
                 <element signature="e#342#343#0" expanded="true" />
                 <element signature="e#365#366#0" expanded="true" />
@@ -229,11 +215,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/config/JdbcTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+            <state relative-caret-position="-384">
+              <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1351#1359#0" expanded="true" />
@@ -270,6 +256,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -545,11 +532,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19904000" />
+    <option name="totallyTimeSpent" value="20426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24618736" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -559,10 +545,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32938388" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.098341234" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49945533" visible="true" weight="0.16824645" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28554502" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -573,7 +558,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3295207" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32938388" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -583,6 +568,7 @@
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3295207" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24618736" />
@@ -924,8 +910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/config/JdbcTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        <state relative-caret-position="-384">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1351#1359#0" expanded="true" />
@@ -1079,8 +1065,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Bill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="384">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="e#342#343#0" expanded="true" />
             <element signature="e#365#366#0" expanded="true" />
