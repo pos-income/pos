@@ -1,5 +1,6 @@
-import com.sun.mail.util.MailSSLSocketFactory;
+package com.config;
 
+import com.sun.mail.util.MailSSLSocketFactory;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
