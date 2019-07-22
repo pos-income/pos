@@ -28,6 +28,12 @@ public interface UserService {
     Map<String,Object> login(Users users);
 
     /**
+     * 用户退出
+     * @param users 用户信息
+     * @return
+     */
+    Map<String,Object> loginOut(Users users);
+    /**
      * 用户列表查询
      * @param users 用户搜索信息
      * @param page 页码

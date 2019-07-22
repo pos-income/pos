@@ -70,17 +70,42 @@ public class UserServiceImpl implements UserService {
             if (user==null){
                 map.put("code",-1);
                 map.put("msg","用户名错误");
-            }else if (user.getPassword().equals(users.getPassword())){
+            }else if (!user.getPassword().equals(users.getPassword())){
                 map.put("code",-2);
                 map.put("msg","密码错误");
             }else{
                 user.setPassword(null);//密码置空
+                user.setIsLog(1);//修改实体类用户登录状态
                 //添加日志
                 loggerService.addLogger(user.getId(),"登录成功");
                 UtilsCache.getLoggerUtils();//清空日志列表缓存
+                //修改数据库中用户登录状态
+                userDao.updataLog(user);
                 map.put("code",200);
                 map.put("msg","登录成功");
                 map.put("user",user);
+            }
+        }
+        return map;
+    }
+
+    @Override
+    public Map<String, Object> loginOut(Users users) {
+        Map<String, Object> map = new HashMap<>();
+        if (users==null){
+            map.put("code",0);
+            map.put("msg","参数不能为空");
+        }else {
+            users.setIsLog(0);
+            Integer integer = userDao.updataLog(users);
+            if (integer>0){
+                //添加日志
+                loggerService.addLogger(users.getId(),"退出登录");
+                map.put("code",200);
+                map.put("msg","退出成功");
+            }else{
+                map.put("code",-3);
+                map.put("msg","退出失败");
             }
         }
         return map;
@@ -94,9 +119,20 @@ public class UserServiceImpl implements UserService {
             page = 1;
         }
         Integer start = 5*(page-1);//起始下标
-        Integer end = start+5;//结束下标
-        map.put("count",userAll.size());
-        map.put("userList",userAll.subList(start,end));
+        if (userAll.size()>start){
+            Integer end;//结束下标
+            if (userAll.size()-start>=5){
+                end = start+5;
+            }else {
+                end = userAll.size();
+            }
+            map.put("count",userAll.size());
+            map.put("userList",userAll.subList(start,end));
+        }else{
+            map.put("code",-5);
+            map.put("msg","没有更多用户");
+        }
         return map;
     }
+
 }

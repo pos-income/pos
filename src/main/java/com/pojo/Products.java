@@ -3,6 +3,8 @@ package com.pojo;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +19,7 @@ public class Products {
     //商品数量
     private Integer Counts;
     //商品价格
-    private Double Prices;
+    private BigDecimal Prices;
 
     public Integer getId() {
         return Id;
@@ -31,7 +33,7 @@ public class Products {
         return Counts;
     }
 
-    public Double getPrices() {
+    public BigDecimal getPrices() {
         return Prices;
     }
 
@@ -47,7 +49,7 @@ public class Products {
         Counts = counts;
     }
 
-    public void setPrices(Double prices) {
+    public void setPrices(BigDecimal prices) {
         Prices = prices;
     }
 

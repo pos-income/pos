@@ -14,8 +14,9 @@ public class LoggerServiceImpl implements LoggerService {
     @Override
     public void addLogger(Integer uid, String msg) {
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = sdf.format(date);
+        System.out.println(format);
         Logger logger = new Logger(null,uid,format,msg);
         loggerDao.addLogger(logger);
     }
