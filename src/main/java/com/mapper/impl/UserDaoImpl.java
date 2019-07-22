@@ -52,13 +52,13 @@ public class UserDaoImpl implements UserDao {
 
     /**
      *查询所有用户信息
-     * @param users
+     * @param
      * @return
      */
     @Override
     public List<Users> findUserAll(Users users) {
         List<Users> findUserAllMethed = jdbcTemplate.query("select * from users",
-                null);
+                new Users(),null);
         return findUserAllMethed;
     }
 }

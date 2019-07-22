@@ -17,9 +17,9 @@ public class MoneyDaoImpl implements MoneyDao {
      */
     @Override
     public Integer addMoney(Money money) {
-        Integer update = JdbcTemplate.update("insert into money (Time,Income,Outcome,residue,Uid,Bid) value(?,?,?,?,?,?)",
+        Integer updateAddMoneyMethed = JdbcTemplate.update("insert into money (Time,Income,Outcome,residue,Uid,Bid) value(?,?,?,?,?,?)",
                 money.getTime(), money.getIncome(), money.getOutcome(), money.getResidue(), money.getUid(), money.getBid());
-        return update;
+        return updateAddMoneyMethed;
     }
 
     /**
@@ -40,8 +40,8 @@ public class MoneyDaoImpl implements MoneyDao {
      */
     @Override
     public List<Money> findMoneyAll(Money money) {
-        List<Money> queryAll = jdbcTemplate.query("select * from money order by Time limit 0,5",
-                null);
-        return queryAll;
+        List<Money> findMoneyAllMethed = jdbcTemplate.query("select * from money order by Time limit 0,5",
+                new Money(),null);
+        return findMoneyAllMethed;
     }
 }

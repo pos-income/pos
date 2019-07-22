@@ -30,4 +30,12 @@ public class Job {
     public String getJname() {
         return Jname;
     }
+
+    @Override
+    public String toString() {
+        return "Job{" +
+                "Id=" + Id +
+                ", Jname='" + Jname + '\'' +
+                '}';
+    }
 }

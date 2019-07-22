@@ -16,9 +16,9 @@ public class BillDaoImpl implements BillDao {
      */
     @Override
     public Integer addBill(Bill bill) {
-        Integer update = JdbcTemplate.update("insert into bill(Bid,Pid,ProductCount) value(?,?,?)",
+        Integer addBillMethed = JdbcTemplate.update("insert into bill(Bid,Pid,ProductCount) value(?,?,?)",
                 bill.getBid(), bill.getPid(), bill.getProductCount());
-        return update;
+        return addBillMethed;
     }
 
    /* @Override
@@ -33,8 +33,8 @@ public class BillDaoImpl implements BillDao {
      */
     @Override
     public List<Bill> findBillAll(Bill bill) {
-        List<Bill> queryAll = jdbcTemplate.query("select b.Bid,p.ProductName,p.Counts,p.prices,p.Counts*p.prices as SUM_prices from bill as b,products as p where b.Bid=? and b.Pid=p.id limit 0,5",
-                null);
-        return queryAll;
+        List<Bill> findBillAllMethed = jdbcTemplate.query("select b.Bid,p.ProductName,p.Counts,p.prices,p.Counts*p.prices as SUM_prices from bill as b,products as p where b.Bid=? and b.Pid=p.id limit 0,5",
+                new Bill(),null);
+        return findBillAllMethed;
     }
 }

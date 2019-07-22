@@ -49,4 +49,14 @@ public class Bill extends Products{
     public Integer getProductCount() {
         return ProductCount;
     }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "Id=" + Id +
+                ", Bid=" + Bid +
+                ", Pid=" + Pid +
+                ", ProductCount=" + ProductCount +
+                '}';
+    }
 }

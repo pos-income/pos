@@ -50,4 +50,14 @@ public class Products {
     public void setPrices(Double prices) {
         Prices = prices;
     }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "Id=" + Id +
+                ", ProductName='" + ProductName + '\'' +
+                ", Counts=" + Counts +
+                ", Prices=" + Prices +
+                '}';
+    }
 }

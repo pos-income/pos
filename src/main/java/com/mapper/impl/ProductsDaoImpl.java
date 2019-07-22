@@ -31,9 +31,9 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public Integer update(Products products) {
-        Integer update = JdbcTemplate.update("update products set Counts=Counts-? where id=?",
+        Integer updateProductsMethed = JdbcTemplate.update("update products set Counts=Counts-? where id=?",
                 products.getId());
-        return update;
+        return updateProductsMethed;
     }
 
     /**
@@ -43,9 +43,9 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public Integer updateAll(Products products) {
-        Integer update = JdbcTemplate.update("update products set Counts=?,ProductName=?,Price=? where Id=?",
+        Integer updateAllProductsMethed = JdbcTemplate.update("update products set Counts=?,ProductName=?,Price=? where Id=?",
                 products.getId());
-        return update;
+        return updateAllProductsMethed;
     }
 
     /**
@@ -56,9 +56,9 @@ public class ProductsDaoImpl implements ProductsDao {
     @Override
     public Products findProducts(Products products) {
         List<Products> query = jdbcTemplate.query("select * from products where ProductName=?",
-                products.getProductName());
-        Products products1=(Products)query.get(0);
-        return products1;
+                products,products.getProductName());
+        Products findProductsMethed=(Products)query.get(0);
+        return findProductsMethed;
     }
 
     /**
@@ -68,8 +68,8 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public List<Products> findProductsAll(Products products) {
-        List<Products> queryAll = jdbcTemplate.query("select * from products ",
-                null);
-        return queryAll;
+        List<Products> findProductsAllMethed = jdbcTemplate.query("select * from products ",
+                new Products(),null);
+        return findProductsAllMethed;
     }
 }

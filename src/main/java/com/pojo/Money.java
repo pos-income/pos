@@ -82,4 +82,17 @@ public class Money extends Users{
     public String getBid() {
         return Bid;
     }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "id=" + id +
+                ", Time='" + Time + '\'' +
+                ", Income=" + Income +
+                ", Outcome=" + Outcome +
+                ", residue=" + residue +
+                ", Uid=" + Uid +
+                ", Bid='" + Bid + '\'' +
+                '}';
+    }
 }

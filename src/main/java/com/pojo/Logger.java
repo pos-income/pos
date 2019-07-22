@@ -50,4 +50,14 @@ public class Logger extends Users{
     public String getPlay() {
         return Play;
     }
+
+    @Override
+    public String toString() {
+        return "Logger{" +
+                "Id=" + Id +
+                ", Uid=" + Uid +
+                ", Time='" + Time + '\'' +
+                ", Play='" + Play + '\'' +
+                '}';
+    }
 }

@@ -17,9 +17,9 @@ public class LoggerDaoImpl implements LoggerDao {
      */
     @Override
     public Integer addLogger(Logger logger) {
-        Integer update = JdbcTemplate.update("insert into logger (Uid,Time,Play) value(?,?,?)",
+        Integer addLoggerMethed = JdbcTemplate.update("insert into logger (Uid,Time,Play) value(?,?,?)",
                 logger.getUid(), logger.getTime(), logger.getPlay());
-        return update;
+        return addLoggerMethed;
     }
 
    /* @Override
@@ -34,8 +34,8 @@ public class LoggerDaoImpl implements LoggerDao {
      */
     @Override
     public List<Logger> findLoggerAll(Logger logger) {
-        List<Logger> queryAll = jdbcTemplate.query("select * from logger",
-                logger.getTime());
-        return queryAll;
+        List<Logger> findLoggerAllMethed = jdbcTemplate.query("select * from logger",
+                new Logger(),logger.getTime());
+        return findLoggerAllMethed;
     }
 }

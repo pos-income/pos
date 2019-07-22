@@ -48,11 +48,13 @@ public class JdbcTemplate <T>{
         ResultSet rs = null;
         try {
             conn=JdbcUtils.getConn();
-
             st= conn.prepareStatement(sql);
             //设置参数完毕
-            for(int i=0;i<args.length;i++) {
-                st.setObject(i+1, args[i]);
+            //判断参数是否为空
+            if (args!=null){
+                for(int i=0;i<args.length;i++) {
+                    st.setObject(i+1, args[i]);
+                }
             }
             rs = st.executeQuery();
             ArrayList<T> list = new ArrayList<>();
