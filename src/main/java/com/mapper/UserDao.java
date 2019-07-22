@@ -16,6 +16,7 @@ public interface UserDao {
    Users findUser(Users users);
    //查找多个用户方法接口  返回一个集合数组
    List<Users> findUserAll(Users users);
-
+   //通过IsLog来判断用户登录状态
+   Integer updataLog(Users users);
 
 }

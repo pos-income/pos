@@ -60,7 +60,6 @@ public class ProductsDaoImpl implements ProductsDao {
         Products findProductsMethed=(Products)query.get(0);
         return findProductsMethed;
     }
-
     /**
      * 通过Counts 查所有商品并进行分页
      * @param products

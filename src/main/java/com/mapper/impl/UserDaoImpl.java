@@ -20,8 +20,8 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Integer addUser(Users users) {
         //添加功能测试通过
-        Integer addUserMethed = JdbcTemplate.update("insert into users (Jid,UserName,Password,Time) values(?,?,?,?)",
-                users.getJid(),users.getUserName(),users.getPassword(),users.getTime());
+        Integer addUserMethed = JdbcTemplate.update("insert into users (Jid,UserName,Password,Time,Email) values(?,?,?,?,?)",
+                users.getJid(),users.getUserName(),users.getPassword(),users.getTime(),users.getEmail());
         return addUserMethed;
     }
 
@@ -60,5 +60,17 @@ public class UserDaoImpl implements UserDao {
         List<Users> findUserAllMethed = jdbcTemplate.query("select * from users",
                 new Users(),null);
         return findUserAllMethed;
+    }
+
+    /**
+     * 通过id修改登录状态
+     * @param users
+     * @return
+     */
+    @Override
+    public Integer updataLog(Users users) {
+        Integer updataLogMethed = JdbcTemplate.update("updata users set IsLog=? where Id=?",
+                users.getIsLog(), users.getId());
+        return updataLogMethed;
     }
 }
