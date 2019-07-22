@@ -79,8 +79,8 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public List<Products> likeIdProducts(String s) {
-        List<Products> likeIdProductsMethed = jdbcTemplate.query("select * from products where Id like '%?%' or ProductName like '%?%'" ,
-                new Products(),s,s);
+        List<Products> likeIdProductsMethed = jdbcTemplate.query("select * from products where Id like '%"+s+"%' or ProductName like '%"+s+"%'" ,
+                new Products());
         return likeIdProductsMethed;
     }
 
