@@ -69,7 +69,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public Integer updataLog(Users users) {
-        Integer updataLogMethed = JdbcTemplate.update("updata users set IsLog=? where Id=?",
+        Integer updataLogMethed = JdbcTemplate.update("update users set IsLog=? where Id=?",
                 users.getIsLog(), users.getId());
         return updataLogMethed;
     }

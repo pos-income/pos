@@ -30,26 +30,31 @@ public  class Test001 {
 //        UserDaoImpl userDao=new UserDaoImpl();
 //        userDao.addUser(users);
 
-       users.setUserName("12");
+       //users.setUserName("12");
 //       userDao.addUser(users);
 //        System.out.println(users.getUserName());
-        System.out.println(userDao.findUser(users).getUserName());
+       // System.out.println(userDao.findUser(users).getUserName());
 //        userDao.findUser(users);
 
 //        Job job = new Job();
         //JdbcTemplate.update("insert into job (Jname) value(1232)");
         //JdbcTemplate.query("select * from job",job);
        // Users users=new Users();
-        users.setJid(1);
+
+        /*users.setJid(1);
         users.setUserName("12");
         users.setPassword("123");
-        users.setTime("2019-07-19");
-        System.out.println(userDao.findUserAll(null).toString());
+        users.setTime("2019-07-19");*/
+
+       // System.out.println(userDao.findUserAll(null).toString());
+
 //        UserDaoImpl userDao=new UserDaoImpl();
 //        userDao.addUser(users);
 
         //userService.login(users);
-
+        users.setIsLog(1);
+        users.setId(1);
+        userDao.updataLog(users);
 
 
     }
