@@ -71,4 +71,29 @@ public class ProductsDaoImpl implements ProductsDao {
                 new Products(),null);
         return findProductsAllMethed;
     }
+
+    /**
+     *通过传入的值进行模糊查询Id和ProductName
+     * @param
+     * @return
+     */
+    @Override
+    public List<Products> likeIdProducts(String s) {
+        List<Products> likeIdProductsMethed = jdbcTemplate.query("select * from products where Id like '%?%' or ProductName like '%?%'" ,
+                new Products(),s,s);
+        return likeIdProductsMethed;
+    }
+
+
+    /**
+     *通过name模糊查询
+     * @param products
+     * @return
+     */
+   /* @Override
+    public List<Products> likeNameProducts(Products products) {
+        List<Products> likeNameProductsMethed = jdbcTemplate.query("",
+                new Products(), products.getProductName());
+        return likeNameProductsMethed;
+    }*/
 }

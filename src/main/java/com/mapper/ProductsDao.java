@@ -18,4 +18,8 @@ public interface ProductsDao {
     Products findProducts(Products products);
     //查找多个商品的方法接口  返回一个集合数组
     List<Products> findProductsAll(Products products);
+    //通过传入Id或者name进行模糊查询
+    List<Products> likeIdProducts(String s);
+    //通过name模糊查询
+   // List<Products> likeNameProducts(Products products);
 }

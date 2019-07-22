@@ -2,8 +2,11 @@ package com;
 
 import com.config.JdbcTemplate;
 import com.config.JdbcUtils;
+import com.mapper.ProductsDao;
+import com.mapper.impl.ProductsDaoImpl;
 import com.mapper.impl.UserDaoImpl;
 import com.pojo.Job;
+import com.pojo.Products;
 import com.pojo.Users;
 import com.service.UserService;
 import com.service.impl.UserServiceImpl;
@@ -52,9 +55,13 @@ public  class Test001 {
 //        userDao.addUser(users);
 
         //userService.login(users);
-        users.setIsLog(1);
-        users.setId(1);
-        userDao.updataLog(users);
+
+        /* users.setIsLog(1);
+        users.setId(10);
+        userDao.updataLog(users);*/
+        Products products =new Products();
+        ProductsDaoImpl productsDao = new ProductsDaoImpl();
+        System.out.println(productsDao.likeIdProducts("1"));
 
 
     }
