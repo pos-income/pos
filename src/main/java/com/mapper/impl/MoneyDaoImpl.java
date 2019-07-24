@@ -4,6 +4,7 @@ import com.config.JdbcTemplate;
 import com.mapper.MoneyDao;
 import com.pojo.Money;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class MoneyDaoImpl implements MoneyDao {
@@ -16,8 +17,8 @@ public class MoneyDaoImpl implements MoneyDao {
      * @return
      */
     @Override
-    public Integer addMoney(Money money) {
-        Integer updateAddMoneyMethed = JdbcTemplate.update("insert into money (Time,Income,Outcome,residue,Uid,Bid) value(?,?,?,?,?,?)",
+    public Integer addMoney(Connection conn, Money money) {
+        Integer updateAddMoneyMethed = JdbcTemplate.update(conn,"insert into money (Time,Income,Outcome,residue,Uid,Bid) value(?,?,?,?,?,?)",
                 money.getTime(), money.getIncome(), money.getOutcome(), money.getResidue(), money.getUid(), money.getBid());
         return updateAddMoneyMethed;
     }

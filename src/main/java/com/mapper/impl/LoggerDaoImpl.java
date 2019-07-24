@@ -17,7 +17,7 @@ public class LoggerDaoImpl implements LoggerDao {
      */
     @Override
     public Integer addLogger(Logger logger) {
-        Integer addLoggerMethed = JdbcTemplate.update("insert into logger (Uid,Time,Play) value(?,?,?)",
+        Integer addLoggerMethed = JdbcTemplate.update(null,"insert into logger (Uid,Time,Play) value(?,?,?)",
                 logger.getUid(), logger.getTime(), logger.getPlay());
         return addLoggerMethed;
     }

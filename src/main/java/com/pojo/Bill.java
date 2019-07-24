@@ -12,7 +12,7 @@ public class Bill extends Products{
     //账单id
     private Integer Id;
     //资金账单id
-    private Integer Bid;
+    private String Bid;
     //售出商品id
     private Integer Pid;
     //商品售出数量
@@ -22,7 +22,7 @@ public class Bill extends Products{
         Id = id;
     }
 
-    public void setBid(Integer bid) {
+    public void setBid(String bid) {
         Bid = bid;
     }
 
@@ -38,7 +38,7 @@ public class Bill extends Products{
         return Id;
     }
 
-    public Integer getBid() {
+    public String getBid() {
         return Bid;
     }
 

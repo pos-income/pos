@@ -11,7 +11,7 @@ public interface ProductService {
      * @param products 新增商品的信息
      * @return
      */
-    Map<String,Object> addProductService(Products products);
+    Map<String,Object> addProductService(Products products,Users users);
 
     /**
      * 根据商品名称查询商品信息
@@ -35,4 +35,11 @@ public interface ProductService {
      * @return
      */
     Map<String,Object> saveProductsAllService(Products products, Users users);
+
+    /**
+     * 通过传入Id或者name进行模糊查询
+     * @param s
+     * @return
+     */
+    Map<String,Object> likeIdProductsService(String s);
 }

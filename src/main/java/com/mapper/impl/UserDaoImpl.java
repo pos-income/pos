@@ -20,7 +20,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Integer addUser(Users users) {
         //添加功能测试通过
-        Integer addUserMethed = JdbcTemplate.update("insert into users (Jid,UserName,Password,Time,Email) values(?,?,?,?,?)",
+        Integer addUserMethed = JdbcTemplate.update(null,"insert into users (Jid,UserName,Password,Time,Email) values(?,?,?,?,?)",
                 users.getJid(),users.getUserName(),users.getPassword(),users.getTime(),users.getEmail());
         return addUserMethed;
     }
@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public Integer update(Users users) {
-        Integer updateUserMethed = JdbcTemplate.update("update users set Password=? where Email=?",
+        Integer updateUserMethed = JdbcTemplate.update(null,"update users set Password=? where Email=?",
                 users.getPassword(),users.getEmail());
         return updateUserMethed;
     }
@@ -69,7 +69,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public Integer updataLog(Users users) {
-        Integer updataLogMethed = JdbcTemplate.update("update users set IsLog=? where Id=?",
+        Integer updataLogMethed = JdbcTemplate.update(null,"update users set IsLog=? where Id=?",
                 users.getIsLog(), users.getId());
         return updataLogMethed;
     }

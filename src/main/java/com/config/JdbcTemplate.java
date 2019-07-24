@@ -20,11 +20,11 @@ public class JdbcTemplate <T>{
      *  DML 操作模板
      *
      *  */
-    public static Integer update(String sql,Object...args) {
+    public static Integer update(Connection co,String sql,Object...args) {
         Connection conn = null;
         PreparedStatement st =null;
         try {
-            conn=JdbcUtils.getConn();
+            conn=co==null?JdbcUtils.getConn():co;
             st = conn.prepareStatement(sql);
             for(int i=0;i<args.length;i++) {
                 st.setObject(i+1, args[i]);
@@ -35,7 +35,9 @@ public class JdbcTemplate <T>{
         }catch(Exception e) {
             e.printStackTrace();
         }finally {
-            JdbcUtils.closeStream(conn, st, null);
+            if (co==null){
+                JdbcUtils.closeStream(conn, st, null);
+            }
         }
         return 0;
 

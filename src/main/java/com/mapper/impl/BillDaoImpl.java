@@ -4,6 +4,7 @@ import com.config.JdbcTemplate;
 import com.mapper.BillDao;
 import com.pojo.Bill;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class BillDaoImpl implements BillDao {
@@ -15,8 +16,8 @@ public class BillDaoImpl implements BillDao {
      * @return
      */
     @Override
-    public Integer addBill(Bill bill) {
-        Integer addBillMethed = JdbcTemplate.update("insert into bill(Bid,Pid,ProductCount) value(?,?,?)",
+    public Integer addBill(Connection conn, Bill bill) {
+        Integer addBillMethed = JdbcTemplate.update(conn,"insert into bill(Bid,Pid,ProductCount) value(?,?,?)",
                 bill.getBid(), bill.getPid(), bill.getProductCount());
         return addBillMethed;
     }

@@ -16,7 +16,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductsDao productsDao = new ProductsDaoImpl();
     private LoggerService loggerService = new LoggerServiceImpl();
     @Override
-    public Map<String, Object> addProductService(Products products) {
+    public Map<String, Object> addProductService(Products products,Users users) {
         Map<String, Object> map = new HashMap<>();
         if(products==null){
             map.put("code",0);
@@ -24,6 +24,10 @@ public class ProductServiceImpl implements ProductService {
         }else{
             Integer integer = productsDao.addProducts(products);
             if (integer>0){
+                //添加日志
+                loggerService.addLogger(users.getId(),"添加了商品");
+                //清空缓存
+                UtilsCache.setProductsUtils();
                 map.put("code",200);
                 map.put("msg","添加成功");
             }else {
@@ -97,6 +101,21 @@ public class ProductServiceImpl implements ProductService {
                 map.put("code",-3);
                 map.put("msg","修改失败");
             }
+        }
+        return map;
+    }
+
+    @Override
+    public Map<String, Object> likeIdProductsService(String s) {
+        Map<String, Object> map = new HashMap<>();
+        List<Products> products = productsDao.likeIdProducts(s);
+        if (products==null || products.size()==0){
+            map.put("code",-5);
+            map.put("msg","没有符合搜索条件的信息");
+        }else {
+            map.put("code",200);
+            map.put("msg","已搜索的信息");
+            map.put("list",products);
         }
         return map;
     }

@@ -19,7 +19,7 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public Integer addProducts(Products products) {
-        Integer update = JdbcTemplate.update("insert into products (ProductName,Counts,Prices) value(?,?,?)",
+        Integer update = JdbcTemplate.update(null,"insert into products (ProductName,Counts,Prices) value(?,?,?)",
                 products.getProductName(),products.getCounts(),products.getPrices());
         return update;
     }
@@ -31,7 +31,7 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public Integer update(Products products) {
-        Integer updateProductsMethed = JdbcTemplate.update("update products set Counts=Counts-? where id=?",
+        Integer updateProductsMethed = JdbcTemplate.update(null,"update products set Counts=Counts-? where id=?",
                 products.getId());
         return updateProductsMethed;
     }
@@ -43,7 +43,7 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public Integer updateAll(Products products) {
-        Integer updateAllProductsMethed = JdbcTemplate.update("update products set Counts=?,ProductName=?,Price=? where Id=?",
+        Integer updateAllProductsMethed = JdbcTemplate.update(null,"update products set Counts=?,ProductName=?,Price=? where Id=?",
                 products.getId());
         return updateAllProductsMethed;
     }
@@ -79,7 +79,7 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public List<Products> likeIdProducts(String s) {
-        List<Products> likeIdProductsMethed = jdbcTemplate.query("select * from products where Id like '%"+s+"%' or ProductName like '%"+s+"%'" ,
+        List<Products> likeIdProductsMethed = jdbcTemplate.query(null,"select * from products where Id like '%"+s+"%' or ProductName like '%"+s+"%'" ,
                 new Products());
         return likeIdProductsMethed;
     }
