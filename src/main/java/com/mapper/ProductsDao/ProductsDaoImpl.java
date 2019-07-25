@@ -32,7 +32,7 @@ public class ProductsDaoImpl implements ProductsDao {
     @Override
     public Integer update(Products products) {
         Integer updateProductsMethed = JdbcTemplate.update(null,"update products set Counts=Counts-? where id=?",
-                products.getId());
+                products.getCounts(),products.getId());
         return updateProductsMethed;
     }
 
@@ -44,7 +44,7 @@ public class ProductsDaoImpl implements ProductsDao {
     @Override
     public Integer updateAll(Products products) {
         Integer updateAllProductsMethed = JdbcTemplate.update(null,"update products set Counts=?,ProductName=?,Price=? where Id=?",
-                products.getId());
+                products.getCounts(),products.getProductName(),products.getPrices(),products.getId());
         return updateAllProductsMethed;
     }
 
@@ -56,7 +56,7 @@ public class ProductsDaoImpl implements ProductsDao {
     @Override
     public Products findProducts(Products products) {
         List<Products> query = jdbcTemplate.query("select * from products where ProductName=?",
-                products,products.getProductName());
+                new Products(),products.getProductName());
         Products findProductsMethed=(Products)query.get(0);
         return findProductsMethed;
     }
