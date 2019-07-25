@@ -13,8 +13,8 @@ public interface JobDao {
 
     //删除职位
     Integer delete(Job job);
-
-    //Job findJob(Job job);
-
+    //修改职位
+    Integer updateJob(Job job);
+    //查看职位
     List<Job> findJobAll(Job job);
 }

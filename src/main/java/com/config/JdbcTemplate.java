@@ -95,10 +95,11 @@ public class JdbcTemplate <T>{
                 Field f=null;
                 //当父类字节码文件里没有查找的对象时捕获抛出的异常
                try {
-                   f=superclass.getDeclaredField(columnName);
-
-               }catch (NoSuchFieldException e){
+                   //查本类
                    f = clazz.getDeclaredField(columnName);
+               }catch (NoSuchFieldException e){
+                   //查父类
+                   f=superclass.getDeclaredField(columnName);
 
                }
                 f.setAccessible(true);//破除私有

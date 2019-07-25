@@ -98,6 +98,7 @@ public class Money extends Users{
                 ", residue=" + residue +
                 ", Uid=" + Uid +
                 ", Bid='" + Bid + '\'' +
+                ", username='" + super.getUserName()+ '\'' +
                 "} " ;
     }
 }

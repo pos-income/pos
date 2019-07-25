@@ -43,7 +43,7 @@ public class ProductsDaoImpl implements ProductsDao {
      */
     @Override
     public Integer updateAll(Products products) {
-        Integer updateAllProductsMethed = JdbcTemplate.update(null,"update products set Counts=?,ProductName=?,Price=? where Id=?",
+        Integer updateAllProductsMethed = JdbcTemplate.update(null,"update products set Counts=?,ProductName=?,Prices=? where Id=?",
                 products.getCounts(),products.getProductName(),products.getPrices(),products.getId());
         return updateAllProductsMethed;
     }

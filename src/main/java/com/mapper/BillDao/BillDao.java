@@ -12,7 +12,7 @@ public interface BillDao {
 
     Integer addBill(Connection conn,Bill bill);
 
-    List<Bill> findBill(Bill bill);
+    //List<Bill> findBill(Bill bill);
 
     List<Bill> findBillAll(Bill bill);
 }

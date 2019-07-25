@@ -1,12 +1,13 @@
 package com.mapper.JobDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.JobDao.JobDao;
 import com.pojo.Job;
 
 import java.util.List;
 
 public class JobDaoImpl implements JobDao {
+
+    JdbcTemplate jdbcTemplate=new JdbcTemplate();
     /**
      *添加职业信息
      * @param job
@@ -20,15 +21,27 @@ public class JobDaoImpl implements JobDao {
     }
 
     /**
-     *通过Jname删除职位
+     *通过id删除职位
      * @param job
      * @return
      */
     @Override
     public Integer delete(Job job) {
-        Integer deleteJobMethed = JdbcTemplate.update(null,"delete from job where Jname=?",
-                job.getJname());
+        Integer deleteJobMethed = JdbcTemplate.update(null,"delete from job where Id=?",
+                job.getId());
         return deleteJobMethed;
+    }
+
+    /**
+     * 通过ID修改
+     * @param job
+     * @return
+     */
+    @Override
+    public Integer updateJob(Job job) {
+        Integer updateJobMethed = JdbcTemplate.update(null, "update job set Jname=? where Id=?",
+                job.getJname(), job.getId());
+        return updateJobMethed;
     }
 
    /* @Override
@@ -36,8 +49,15 @@ public class JobDaoImpl implements JobDao {
         return null;
     }*/
 
+    /**
+     * 查看所有职位
+     * @param job
+     * @return
+     */
     @Override
     public List<Job> findJobAll(Job job) {
+        jdbcTemplate.query("select * from job",
+                new Job(),null);
         return null;
     }
 }

@@ -34,8 +34,8 @@ public class LoggerDaoImpl implements LoggerDao {
      */
     @Override
     public List<Logger> findLoggerAll(Logger logger) {
-        List<Logger> findLoggerAllMethed = jdbcTemplate.query("select * from logger",
-                new Logger());
+        List<Logger> findLoggerAllMethed = jdbcTemplate.query("select * from logger order by Time",
+                new Logger(),null);
         return findLoggerAllMethed;
     }
 }
