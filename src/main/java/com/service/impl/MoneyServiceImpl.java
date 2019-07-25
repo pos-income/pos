@@ -6,8 +6,11 @@ import com.mapper.BillDao.BillDao;
 import com.mapper.MoneyDao.MoneyDao;
 import com.mapper.BillDao.BillDaoImpl;
 import com.mapper.MoneyDao.MoneyDaoImpl;
+import com.mapper.ProductsDao.ProductsDao;
+import com.mapper.ProductsDao.ProductsDaoImpl;
 import com.pojo.Bill;
 import com.pojo.Money;
+import com.pojo.Products;
 import com.pojo.Users;
 import com.service.LoggerService;
 import com.service.MoneyService;
@@ -21,9 +24,10 @@ import java.util.Map;
 public class MoneyServiceImpl implements MoneyService {
     private MoneyDao moneyDao=new MoneyDaoImpl();
     private BillDao billDao = new BillDaoImpl();
+    private ProductsDao productsDao = new ProductsDaoImpl();
     private LoggerService loggerService = new LoggerServiceImpl();
     @Override
-    public Map<String, Object> addMoneyService(Money money, List<Bill> args, Users users) {
+    public Map<String, Object> addMoneyService(Money money, List<Bill> args) {
         Map<String, Object> map = new HashMap<>();
         if (money==null){
             map.put("code",0);
@@ -41,22 +45,37 @@ public class MoneyServiceImpl implements MoneyService {
                     map.put("code",-5);
                     map.put("msg","资金变更信息添加失败");
                 }else {
+                    Products products = new Products();
+                    Integer i = 0;
                     for (Bill bill:args) {
-                        billDao.addBill(conn,bill);
-                        if (integer<=0){
+                        products.setCounts(bill.getProductCount());
+                        products.setId(bill.getPid());
+                        Integer update = productsDao.update(products);//商品数量修改
+                        if (update<=0){
                             conn.rollback();
-                            map.put("code",-5);
-                            map.put("msg","账单信息添加失败");
+                            map.put("code",-3);
+                            map.put("msg","商品数量修改失败");
+                            i++;
+                        }else {
+                            Integer bill1 = billDao.addBill(conn, bill);//账单信息添加
+                            if (integer<=0){
+                                conn.rollback();
+                                map.put("code",-5);
+                                map.put("msg","账单信息添加失败");
+                                i++;
+                            }
                         }
                     }
-                    conn.commit();
-                    //添加日志
-                    loggerService.addLogger(users.getId(),"完成了一次交易");
-                    //清空缓存
-                    UtilsCache.setBillUtils();
-                    UtilsCache.setMoneyUtils();
-                    map.put("code",200);
-                    map.put("msg","添加成功");
+                    if (i==0){
+                        loggerService.addLogger(money.getUid(),"完成了一次交易");
+                        conn.commit();
+                        //添加日志
+                        //清空缓存
+                        UtilsCache.setBillUtils();
+                        UtilsCache.setMoneyUtils();
+                        map.put("code",200);
+                        map.put("msg","添加成功");
+                    }
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -70,7 +89,7 @@ public class MoneyServiceImpl implements MoneyService {
 
 
         }
-        return null;
+        return map;
     }
 
     @Override

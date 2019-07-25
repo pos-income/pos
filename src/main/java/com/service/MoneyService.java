@@ -13,7 +13,7 @@ public interface MoneyService {
      * @param money
      * @return
      */
-    Map<String,Object> addMoneyService(Money money, List<Bill> args, Users users);
+    Map<String,Object> addMoneyService(Money money, List<Bill> args);
 
 //    Map<String,Object> findMoneyService(Money money);
 
