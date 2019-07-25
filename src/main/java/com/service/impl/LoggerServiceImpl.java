@@ -19,7 +19,7 @@ public class LoggerServiceImpl implements LoggerService {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = sdf.format(date);
-        System.out.println(format);
+//        System.out.println(format);
         Logger logger = new Logger(null,uid,format,msg);
         loggerDao.addLogger(logger);
     }
