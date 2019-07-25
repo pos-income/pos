@@ -31,7 +31,7 @@ public class JdbcTemplate <T>{
                 st.setObject(i+1, args[i]);
             }
             int i = st.executeUpdate();
-            System.out.println(i);
+           // System.out.println(i);
             return i;
         }catch(Exception e) {
             e.printStackTrace();

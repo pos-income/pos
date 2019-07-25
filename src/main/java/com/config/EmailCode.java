@@ -8,7 +8,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.Random;
 
-public class EmailCode {
+public class EmailCode{
     private String email;// 收件人邮箱
 
     public EmailCode(String email ) {

@@ -13,9 +13,9 @@ import java.math.BigDecimal;
  */
 public class Money extends Users{
     //资金的id
-   // private Integer Id;
+    private Integer Id;
     //入职时间
-   // private String Time;
+    private String Time;
     //收入（找零前）
     private BigDecimal Income;
     //找零
@@ -23,11 +23,29 @@ public class Money extends Users{
     //剩余收入（找零后）
     private BigDecimal residue;
     //职员id
-    private Integer uid;
+    private Integer Uid;
     //账号id
     private String Bid;
 
+    @Override
+    public void setId(Integer id) {
+        Id = id;
+    }
 
+    @Override
+    public void setTime(String time) {
+        Time = time;
+    }
+
+    @Override
+    public Integer getId() {
+        return Id;
+    }
+
+    @Override
+    public String getTime() {
+        return Time;
+    }
 
     public void setIncome(BigDecimal income) {
         Income = income;
@@ -41,8 +59,8 @@ public class Money extends Users{
         this.residue = residue;
     }
 
-    public void setUid(Integer uid) {
-        uid = uid;
+    public void setUid(Integer Uid) {
+        this.Uid = Uid;
     }
 
     public void setBid(String bid) {
@@ -63,21 +81,22 @@ public class Money extends Users{
     }
 
     public Integer getUid() {
-        return uid;
+        return Uid;
     }
 
     public String getBid() {
         return Bid;
     }
 
-
     @Override
     public String toString() {
         return "Money{" +
-                "Income=" + Income +
+                "Id=" + Id +
+                ", Time='" + Time + '\'' +
+                ", Income=" + Income +
                 ", Outcome=" + Outcome +
                 ", residue=" + residue +
-                ", Uid=" + uid +
+                ", Uid=" + Uid +
                 ", Bid='" + Bid + '\'' +
                 "} " ;
     }
