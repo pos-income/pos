@@ -2,13 +2,12 @@ package com.service.impl;
 
 import com.config.JdbcUtils;
 import com.config.UtilsCache;
-import com.mapper.BillDao;
-import com.mapper.MoneyDao;
-import com.mapper.impl.BillDaoImpl;
-import com.mapper.impl.MoneyDaoImpl;
+import com.mapper.BillDao.BillDao;
+import com.mapper.MoneyDao.MoneyDao;
+import com.mapper.BillDao.BillDaoImpl;
+import com.mapper.MoneyDao.MoneyDaoImpl;
 import com.pojo.Bill;
 import com.pojo.Money;
-import com.pojo.Products;
 import com.pojo.Users;
 import com.service.LoggerService;
 import com.service.MoneyService;

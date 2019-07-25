@@ -1,5 +1,6 @@
 package com.config;
 
+
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
@@ -75,17 +76,33 @@ public class JdbcTemplate <T>{
             //可以获取指定表中每一列的列名
             ResultSetMetaData metaData = rs.getMetaData();
             int count = metaData.getColumnCount();//获取当前表的列个数
+            //当前对象的字节码文件
             Class clazz = o.getClass();
+            //当前文件的父类字节码文件
+            Class superclass = o.getClass().getSuperclass();
             Object newInstance = clazz.newInstance();//通过无参构造创建对象
             for(int i=1;i<=count;i++) {
                 String columnName = metaData.getColumnName(i);
+
                 /* *
                  *
                  * 反射   代理
                  **/
 
-                Field f = clazz.getDeclaredField(columnName);
+               // System.out.println(1223);
+//                System.out.println(clazz.getDeclaredField(columnName));
+                //全局变量
+                Field f=null;
+                //当父类字节码文件里没有查找的对象时捕获抛出的异常
+               try {
+                   f=superclass.getDeclaredField(columnName);
+
+               }catch (NoSuchFieldException e){
+                   f = clazz.getDeclaredField(columnName);
+
+               }
                 f.setAccessible(true);//破除私有
+
                 if(rs.getObject(i)!=null) {
                     f.set(newInstance, rs.getObject(i));
                 }

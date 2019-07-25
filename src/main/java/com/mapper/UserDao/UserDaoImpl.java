@@ -1,7 +1,7 @@
-package com.mapper.impl;
+package com.mapper.UserDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.UserDao;
+import com.mapper.UserDao.UserDao;
 import com.pojo.Users;
 
 import java.util.List;

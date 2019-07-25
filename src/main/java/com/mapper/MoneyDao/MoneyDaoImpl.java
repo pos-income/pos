@@ -1,7 +1,7 @@
-package com.mapper.impl;
+package com.mapper.MoneyDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.MoneyDao;
+import com.mapper.MoneyDao.MoneyDao;
 import com.pojo.Money;
 
 import java.sql.Connection;
@@ -28,11 +28,12 @@ public class MoneyDaoImpl implements MoneyDao {
      * @param money
      * @return
      */
-    /*@Override
-    public Money findMoney(Money money) {
-        jdbcTemplate.query("select ",money);
-        return null;
-    }*/
+    @Override
+    public List<Money> findMoney(Money money) {
+        List<Money> findMoneyMethed = jdbcTemplate.query("select a.*,b.Username from money a left join users b on a.uid=b.Id ",
+                new Money(), null);
+        return findMoneyMethed;
+    }
 
     /**
      * 通过Time 查询所有资金信息
@@ -41,8 +42,8 @@ public class MoneyDaoImpl implements MoneyDao {
      */
     @Override
     public List<Money> findMoneyAll(Money money) {
-        List<Money> findMoneyAllMethed = jdbcTemplate.query("select * from money order by Time limit 0,5",
-                new Money(),null);
+        List<Money> findMoneyAllMethed = jdbcTemplate.query("select * from money order by Time=? limit 0,5",
+                new Money(),money.getTime());
         return findMoneyAllMethed;
     }
 }

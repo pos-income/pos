@@ -1,4 +1,4 @@
-package com.mapper;
+package com.mapper.LoggerDao;
 
 import com.pojo.Logger;
 

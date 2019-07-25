@@ -1,4 +1,4 @@
-package com.mapper;
+package com.mapper.ProductsDao;
 
 import com.pojo.Products;
 

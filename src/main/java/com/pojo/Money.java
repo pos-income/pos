@@ -13,86 +13,72 @@ import java.math.BigDecimal;
  */
 public class Money extends Users{
     //资金的id
-    private Integer id;
+   // private Integer Id;
     //入职时间
-    private String Time;
+   // private String Time;
     //收入（找零前）
-    private Double Income;
+    private BigDecimal Income;
     //找零
-    private Double Outcome;
+    private BigDecimal Outcome;
     //剩余收入（找零后）
-    private Double residue;
+    private BigDecimal residue;
     //职员id
-    private Integer Uid;
+    private Integer uid;
     //账号id
     private String Bid;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public void setTime(String time) {
-        Time = time;
-    }
 
-    public void setIncome(Double income) {
+    public void setIncome(BigDecimal income) {
         Income = income;
     }
 
-    public void setOutcome(Double outcome) {
+    public void setOutcome(BigDecimal outcome) {
         Outcome = outcome;
     }
 
-    public void setResidue(Double residue) {
+    public void setResidue(BigDecimal residue) {
         this.residue = residue;
     }
 
     public void setUid(Integer uid) {
-        Uid = uid;
+        uid = uid;
     }
 
     public void setBid(String bid) {
         Bid = bid;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public String getTime() {
-        return Time;
-    }
-
-    public Double getIncome() {
+    public BigDecimal getIncome() {
         return Income;
     }
 
-    public Double getOutcome() {
+    public BigDecimal getOutcome() {
         return Outcome;
     }
 
-    public Double getResidue() {
+    public BigDecimal getResidue() {
         return residue;
     }
 
     public Integer getUid() {
-        return Uid;
+        return uid;
     }
 
     public String getBid() {
         return Bid;
     }
 
+
     @Override
     public String toString() {
         return "Money{" +
-                "id=" + id +
-                ", Time='" + Time + '\'' +
-                ", Income=" + Income +
+                "Income=" + Income +
                 ", Outcome=" + Outcome +
                 ", residue=" + residue +
-                ", Uid=" + Uid +
+                ", Uid=" + uid +
                 ", Bid='" + Bid + '\'' +
-                '}';
+                "} " ;
     }
 }

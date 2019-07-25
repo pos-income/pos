@@ -1,4 +1,4 @@
-package com.mapper;
+package com.mapper.BillDao;
 
 import com.pojo.Bill;
 
@@ -12,7 +12,7 @@ public interface BillDao {
 
     Integer addBill(Connection conn,Bill bill);
 
-    /*Bill findBill(Bill bill);*/
+    List<Bill> findBill(Bill bill);
 
     List<Bill> findBillAll(Bill bill);
 }

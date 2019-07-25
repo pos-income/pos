@@ -1,10 +1,9 @@
 package com.service.impl;
 
 import com.config.UtilsCache;
-import com.mapper.BillDao;
-import com.mapper.impl.BillDaoImpl;
+import com.mapper.BillDao.BillDao;
+import com.mapper.BillDao.BillDaoImpl;
 import com.pojo.Bill;
-import com.pojo.Products;
 import com.service.BillService;
 
 import java.util.HashMap;

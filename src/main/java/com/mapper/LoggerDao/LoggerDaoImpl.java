@@ -1,7 +1,7 @@
-package com.mapper.impl;
+package com.mapper.LoggerDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.LoggerDao;
+import com.mapper.LoggerDao.LoggerDao;
 import com.pojo.Logger;
 
 import java.util.List;

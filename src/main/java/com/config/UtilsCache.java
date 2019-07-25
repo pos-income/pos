@@ -1,7 +1,11 @@
 package com.config;
 
-import com.mapper.ProductsDao;
-import com.mapper.impl.*;
+import com.mapper.BillDao.BillDaoImpl;
+import com.mapper.LoggerDao.LoggerDaoImpl;
+import com.mapper.MoneyDao.MoneyDaoImpl;
+import com.mapper.ProductsDao.ProductsDao;
+import com.mapper.ProductsDao.ProductsDaoImpl;
+import com.mapper.UserDao.UserDaoImpl;
 import com.pojo.*;
 
 import java.util.List;

@@ -1,8 +1,8 @@
 package com.service.impl;
 
 import com.config.UtilsCache;
-import com.mapper.ProductsDao;
-import com.mapper.impl.ProductsDaoImpl;
+import com.mapper.ProductsDao.ProductsDao;
+import com.mapper.ProductsDao.ProductsDaoImpl;
 import com.pojo.Products;
 import com.pojo.Users;
 import com.service.LoggerService;

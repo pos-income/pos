@@ -1,7 +1,7 @@
-package com.mapper.impl;
+package com.mapper.BillDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.BillDao;
+import com.mapper.BillDao.BillDao;
 import com.pojo.Bill;
 
 import java.sql.Connection;
@@ -22,10 +22,13 @@ public class BillDaoImpl implements BillDao {
         return addBillMethed;
     }
 
-   /* @Override
-    public Bill findBill(Bill bill) {
-        return null;
-    }*/
+       //通过Bid查询账单信息
+    @Override
+    public List<Bill> findBill(Bill bill) {
+        List<Bill> findBillMethed = jdbcTemplate.query("select * from bill where Bid=?",
+                new Bill(), bill.getBid());
+        return findBillMethed;
+    }
 
     /**
      * 通过Bid 查询所有账单信息
@@ -34,8 +37,8 @@ public class BillDaoImpl implements BillDao {
      */
     @Override
     public List<Bill> findBillAll(Bill bill) {
-        List<Bill> findBillAllMethed = jdbcTemplate.query("select b.Bid,p.ProductName,p.Counts,p.prices,p.Counts*p.prices as SUM_prices from bill as b,products as p where b.Bid=? and b.Pid=p.id limit 0,5",
-                new Bill(),null);
+       List<Bill> findBillAllMethed = jdbcTemplate.query("select * from bill where Bid=?",
+                new Bill(), bill.getBid());
         return findBillAllMethed;
     }
 }

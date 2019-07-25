@@ -1,4 +1,4 @@
-package com.mapper;
+package com.mapper.JobDao;
 
 import com.pojo.Job;
 
@@ -14,7 +14,7 @@ public interface JobDao {
     //删除职位
     Integer delete(Job job);
 
-    /*Job findJob(Job job);
+    //Job findJob(Job job);
 
-    List<Job> findJobAll(Job job);*/
+    List<Job> findJobAll(Job job);
 }

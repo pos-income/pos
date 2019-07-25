@@ -1,7 +1,7 @@
-package com.mapper.impl;
+package com.mapper.JobDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.JobDao;
+import com.mapper.JobDao.JobDao;
 import com.pojo.Job;
 
 import java.util.List;
@@ -34,10 +34,10 @@ public class JobDaoImpl implements JobDao {
    /* @Override
     public Job findJob(Job job) {
         return null;
-    }
+    }*/
 
     @Override
     public List<Job> findJobAll(Job job) {
         return null;
-    }*/
+    }
 }

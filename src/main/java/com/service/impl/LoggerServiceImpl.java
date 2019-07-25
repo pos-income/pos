@@ -1,10 +1,9 @@
 package com.service.impl;
 
 import com.config.UtilsCache;
-import com.mapper.LoggerDao;
-import com.mapper.impl.LoggerDaoImpl;
+import com.mapper.LoggerDao.LoggerDao;
+import com.mapper.LoggerDao.LoggerDaoImpl;
 import com.pojo.Logger;
-import com.pojo.Products;
 import com.service.LoggerService;
 
 import java.text.SimpleDateFormat;
