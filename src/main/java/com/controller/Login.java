@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         //获取前端传过来的值：用户名（name）、用户密码（password）
-        String name = req.getParameter("name");
+        String name = req.getParameter("username");
         String password = req.getParameter("password");
         //将获取到的值封装到Users对象中
         Users user = new Users();
