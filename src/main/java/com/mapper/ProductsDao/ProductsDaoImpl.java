@@ -1,7 +1,6 @@
 package com.mapper.ProductsDao;
 
 import com.config.JdbcTemplate;
-import com.mapper.ProductsDao.ProductsDao;
 import com.pojo.Products;
 
 import java.util.List;

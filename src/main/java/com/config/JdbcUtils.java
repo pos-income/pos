@@ -16,7 +16,7 @@ public class JdbcUtils {
     static {
         try {
             ppt = new Properties();
-            ppt.load(JdbcUtils.class.getClassLoader().getResourceAsStream("c3p0.properties"));
+            ppt.load(JdbcUtils.class.getClassLoader().getResourceAsStream("dbcp.properties"));
             //创建一个数据源工厂
             BasicDataSourceFactory data = new BasicDataSourceFactory();
             dataSource = data.createDataSource(ppt);//连接池（数据源）
