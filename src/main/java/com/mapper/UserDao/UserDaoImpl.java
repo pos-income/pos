@@ -46,8 +46,13 @@ public class UserDaoImpl implements UserDao {
     public Users findUser(Users users) {
         List<Users> findUserMethed = jdbcTemplate.query("select * from users where UserName=?",
                 new Users(),users.getUserName());
-        Users user = (Users) findUserMethed.get(0);
-        return user;
+        if (findUserMethed!=null){
+            if (findUserMethed.size()>0){
+                Users user = (Users) findUserMethed.get(0);
+                return user;
+            }
+        }
+        return null;
     }
 
     /**

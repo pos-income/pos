@@ -56,8 +56,8 @@ public class JobDaoImpl implements JobDao {
      */
     @Override
     public List<Job> findJobAll(Job job) {
-        jdbcTemplate.query("select * from job",
-                new Job(),null);
-        return null;
+        List findJobAllMethed = jdbcTemplate.query("select * from job",
+                new Job(), null);
+        return findJobAllMethed;
     }
 }

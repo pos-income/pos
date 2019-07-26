@@ -56,8 +56,14 @@ public class ProductsDaoImpl implements ProductsDao {
     public Products findProducts(Products products) {
         List<Products> query = jdbcTemplate.query("select * from products where ProductName=?",
                 new Products(),products.getProductName());
-        Products findProductsMethed=(Products)query.get(0);
-        return findProductsMethed;
+        if (query!=null){
+            if (query.size()>0){
+                Products findProductsMethed=(Products)query.get(0);
+                return findProductsMethed;
+            }
+
+        }
+        return null;
     }
     /**
      * 通过Counts 查所有商品并进行分页
