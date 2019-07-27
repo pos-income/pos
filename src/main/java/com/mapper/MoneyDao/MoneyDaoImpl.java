@@ -23,17 +23,6 @@ public class MoneyDaoImpl implements MoneyDao {
         return updateAddMoneyMethed;
     }
 
-  /*  *//**
-     *查询
-     * @param money
-     * @return
-     *//*
-    @Override
-    public List<Money> findMoney(Money money) {
-        List<Money> findMoneyMethed = jdbcTemplate.query("select a.*,b.Username from money a left join users b on a.uid=b.Id ",
-                new Money(), null);
-        return findMoneyMethed;
-    }*/
 
     /**
      * 通过Time 查询所有资金信息
@@ -46,6 +35,11 @@ public class MoneyDaoImpl implements MoneyDao {
 //                new Money(),null);
         List<Money> findMoneyAllMethed = jdbcTemplate.query("select a.*,b.Username from money a left join users b on a.uid=b.Id order by a.Time",
                 new Money(), null);
-        return findMoneyAllMethed;
+            if (findMoneyAllMethed!=null){
+                if (findMoneyAllMethed.size()>0){
+                    return findMoneyAllMethed;
+                }
+            }
+            return null;
     }
 }

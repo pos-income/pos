@@ -22,11 +22,6 @@ public class LoggerDaoImpl implements LoggerDao {
         return addLoggerMethed;
     }
 
-   /* @Override
-    public Logger findLogger(Logger logger) {
-        return null;
-    }*/
-
     /**
      *通过Time查询所有日志信息
      * @param logger
@@ -36,6 +31,11 @@ public class LoggerDaoImpl implements LoggerDao {
     public List<Logger> findLoggerAll(Logger logger) {
         List<Logger> findLoggerAllMethed = jdbcTemplate.query("select * from logger order by Time",
                 new Logger(),null);
-        return findLoggerAllMethed;
+            if (findLoggerAllMethed!=null){
+                if (findLoggerAllMethed.size()>0){
+                    return findLoggerAllMethed;
+                }
+            }
+            return null;
     }
 }

@@ -22,14 +22,6 @@ public class BillDaoImpl implements BillDao {
         return addBillMethed;
     }
 
-     /*  //通过Bid查询账单信息
-    @Override
-    public List<Bill> findBill(Bill bill) {
-        List<Bill> findBillMethed = jdbcTemplate.query("select * from bill where Bid=?",
-                new Bill(), bill.getBid());
-        return findBillMethed;
-    }*/
-
     /**
      * 通过Bid 查询所有账单信息
      * @param bill
@@ -39,6 +31,11 @@ public class BillDaoImpl implements BillDao {
     public List<Bill> findBillAll(Bill bill) {
        List<Bill> findBillAllMethed = jdbcTemplate.query("select * from bill where Bid=?",
                 new Bill(), bill.getBid());
-        return findBillAllMethed;
+       if (findBillAllMethed!=null){
+           if (findBillAllMethed.size()>0){
+               return findBillAllMethed;
+           }
+       }
+       return null;
     }
 }

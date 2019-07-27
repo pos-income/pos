@@ -106,17 +106,4 @@ public class ProductsDaoImpl implements ProductsDao {
         }
         return null;
     }
-
-
-    /**
-     *通过name模糊查询
-     * @param products
-     * @return
-     */
-   /* @Override
-    public List<Products> likeNameProducts(Products products) {
-        List<Products> likeNameProductsMethed = jdbcTemplate.query("",
-                new Products(), products.getProductName());
-        return likeNameProductsMethed;
-    }*/
 }

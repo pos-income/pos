@@ -58,6 +58,11 @@ public class JobDaoImpl implements JobDao {
     public List<Job> findJobAll(Job job) {
         List findJobAllMethed = jdbcTemplate.query("select * from job",
                 new Job(), null);
-        return findJobAllMethed;
+        if (findJobAllMethed!=null){
+            if (findJobAllMethed.size()>0){
+                return findJobAllMethed;
+            }
+        }
+        return null;
     }
 }
