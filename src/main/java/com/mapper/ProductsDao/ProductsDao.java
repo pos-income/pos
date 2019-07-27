@@ -20,6 +20,6 @@ public interface ProductsDao {
     List<Products> findProductsAll(Products products);
     //通过传入Id或者name进行模糊查询
     List<Products> likeIdProducts(String s);
-    //通过name模糊查询
-   // List<Products> likeNameProducts(Products products);
+    //通过Id模糊查询
+   Products findProductsById(Products products);
 }

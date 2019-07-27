@@ -89,6 +89,24 @@ public class ProductsDaoImpl implements ProductsDao {
         return likeIdProductsMethed;
     }
 
+    /**
+     * 通过Id查询商品信息
+     * @param products
+     * @return
+     */
+    @Override
+    public Products findProductsById(Products products) {
+        List<Products> productsList = jdbcTemplate.query("select * from products where Id=?",
+                new Products(), products.getId());
+        if (productsList!=null){
+            if (productsList.size()>0){
+                Products findProductsByIdMethed = productsList.get(0);
+                return findProductsByIdMethed;
+            }
+        }
+        return null;
+    }
+
 
     /**
      *通过name模糊查询
