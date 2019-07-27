@@ -50,20 +50,29 @@ public class MoneyServiceImpl implements MoneyService {
                     for (Bill bill:args) {
                         products.setCounts(bill.getProductCount());
                         products.setId(bill.getPid());
+                        Products product = productsDao.findProductsById(products);
+                        if (product.getCounts()<products.getCounts()){
+                            conn.rollback();
+                            map.put("code",-6);
+                            map.put("msg","商品"+product.getProductName()+"数量不足");
+                            i++;
+                            break;
+                        }
                         Integer update = productsDao.update(products);//商品数量修改
                         if (update<=0){
                             conn.rollback();
                             map.put("code",-3);
-                            map.put("msg","商品数量修改失败");
+                            map.put("msg","商品"+product.getProductName()+"数量修改失败");
                             i++;
-                        }else {
-                            Integer bill1 = billDao.addBill(conn, bill);//账单信息添加
-                            if (integer<=0){
-                                conn.rollback();
-                                map.put("code",-5);
-                                map.put("msg","账单信息添加失败");
-                                i++;
-                            }
+                            break;
+                        }
+                        Integer bill1 = billDao.addBill(conn, bill);//账单信息添加
+                        if (bill1<=0){
+                            conn.rollback();
+                            map.put("code",-5);
+                            map.put("msg","账单信息添加失败");
+                            i++;
+                            break;
                         }
                     }
                     if (i==0){
